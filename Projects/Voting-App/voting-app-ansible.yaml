@@ -1,0 +1,31 @@
+---
+- name: Deploying Voting App Pods and Services
+  hosts: localhost
+  tasks:
+
+  - name: Deploying Voting App Pod
+    command: kubectl create -f voting-app-pod.yaml
+
+  - name: Deploying Voting App Service
+    command: kubectl create -f voting-app-service.yaml
+
+  - name: Deploying Redis Pod
+    command: kubectl create -f redis-pod.yaml
+    
+  - name: Deploying Redis Service
+    command: kubectl create -f redis-service.yaml
+
+  - name: Deploying Postgres Pod
+    command: kubectl create -f postgres-pod.yaml
+    
+  - name: Deploying Postgres Service
+    command: kubectl create -f postgres-service.yaml
+
+  - name: Deploying Worker Pod
+    command: kubectl create -f worker-app-pod.yaml
+
+  - name: Deploying Result Pod
+    command: kubectl create -f result-app-pod.yaml
+    
+  - name: Deploying Result Service
+    command: kubectl create -f result-app-service.yaml
